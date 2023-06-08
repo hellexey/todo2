@@ -1,26 +1,31 @@
-import React, { Component } from 'react'
-import TasksFilter from '../TaskFilter'
+import React from 'react'
+import TaskFilter from '../TaskFilter'
+import { FilterType } from '../TaskFilter/TaskFilter'
 
 interface FooterProps {
-    count: number;
+  totalTasks: number;
+  completedTasks: number;
+  onClearCompleted: () => void;
+  activeFilter: FilterType;
+  onFilterChange: (filter: FilterType) => void;
 }
 
-export default class Footer extends Component<FooterProps> {
-    constructor(props: FooterProps) {
-        super(props)
-        this.state = {
-            count: 0
-        }
-    }
-
-    render() {
-        return (
-          <footer className='footer'>
-              <span className='todo-count'>{this.props.count} items left</span>
-              <TasksFilter />
-              <button className='clear-completed'>Clear completed</button>
-          </footer>
-        )
-    }
+const Footer: React.FC<FooterProps> = ({
+                                         totalTasks,
+                                         completedTasks,
+                                         activeFilter,
+                                         onFilterChange,
+                                         onClearCompleted
+                                       }) => {
+  return (
+    <footer className='footer'>
+      <span className='todo-count'>{totalTasks - completedTasks} items left</span>
+      <TaskFilter activeFilter={activeFilter} onFilterChange={onFilterChange} />
+      <button className='clear-completed' onClick={onClearCompleted}>
+        Clear Completed
+      </button>
+    </footer>
+  )
 }
 
+export default Footer

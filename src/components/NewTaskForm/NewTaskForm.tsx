@@ -1,36 +1,29 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react'
+import React, { useState } from 'react'
 
-export interface NewTaskFormProps {
-  onAddTask: (description: string) => void;
+interface NewTaskFormProps {
+  onAddTask: (task: string) => void;
 }
 
-const NewTaskForm = ({ onAddTask }: NewTaskFormProps) => {
-  const [description, setDescription] = useState('')
+const NewTaskForm: React.FC<NewTaskFormProps> = ({ onAddTask }) => {
+  const [task, setTask] = useState('')
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setDescription(e.target.value)
-  }
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (description) {
-      onAddTask(description)
-      setDescription('')
+    if (task.trim() !== '') {
+      onAddTask(task)
+      setTask('')
     }
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        className='new-todo'
-        placeholder='What needs to be done?'
-        autoFocus
-        value={description}
-        onChange={handleChange}
-      />
+      <input className='new-todo'
+             placeholder='What needs to be done?'
+             autoFocus
+             value={task}
+             onChange={(e) => setTask(e.target.value)} />
     </form>
   )
 }
-
 
 export default NewTaskForm

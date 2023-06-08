@@ -1,72 +1,90 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import TaskList from '../TaskList'
+import { FilterType } from '../TaskFilter/TaskFilter'
 import NewTaskForm from '../NewTaskForm'
 import Footer from '../Footer'
-import { TaskProps } from '../Task/task'
-import { v4 as uuidv4 } from 'uuid'
 
 
-interface AppState {
-    tasks: TaskProps[];
+interface Task {
+  id: number;
+  task: string;
+  completed: boolean;
 }
 
-export default class App extends Component<Record<string, never>, AppState> {
-    constructor(props: Record<string, never>) {
-        super(props);
-        this.state = {
-            tasks: [],
-        };
+const App: React.FC = () => {
+  const [tasks, setTasks] = useState<Task[]>([])
+  const [filter, setFilter] = useState<FilterType>(FilterType.All)
+
+  const addTask = (task: string) => {
+    const newTask: Task = {
+      id: Date.now(),
+      task,
+      completed: false
     }
+    setTasks([...tasks, newTask])
+  }
+
+  const toggleTask = (taskId: number) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, completed: !task.completed } : task
+      )
+    )
+  }
+
+  const deleteTask = (taskId: number) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId))
+  }
+
+  const clearCompletedTasks = () => {
+    setTasks((prevTasks) => prevTasks.filter((task) => !task.completed))
+  }
+
+  const editTask = (taskId: number, newTask: string) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, task: newTask, completed: task.completed } : task
+      )
+    )
+  }
 
 
-    updateTask = (id: string, description: string) => {
-        this.setState(prevState => ({
-            tasks: prevState.tasks.map(task =>
-              task.id === id ? { ...task, description } : task
-            )
-        }))
-    }
+  const filteredTasks = (tasks: Task[], filter: FilterType) => {
+    return tasks.filter((task) => {
+      if (filter === FilterType.Completed) {
+        return task.completed
+      } else if (filter === FilterType.Active) {
+        return !task.completed
+      } else {
+        return true
+      }
+    })
+  }
 
-    deleteTask = (id: string) => {
-        this.setState(prevState => ({
-            tasks: prevState.tasks.filter(task => task.id !== id)
-        }))
-    }
 
-    addTask = (description: string) => {
-        const newTask: TaskProps = {
-            id: uuidv4(),
-            description,
-            created: new Date().toLocaleString(),
-            completed: false,
-            onDelete: this.deleteTask,
-            onAddTask: this.addTask,
-            onUpdate: this.updateTask,
-        }
-        this.setState(prevState => ({
-            tasks: [...prevState.tasks, newTask]
-        }))
-    }
-
-    render() {
-        return (
-          <div className="todoapp">
-              <header className='header'>
-                  <h1>todos</h1>
-                  <NewTaskForm onAddTask={this.addTask} />
-              </header>
-              <section className="main">
-                  <TaskList
-                    tasks={this.state.tasks} // Заменяем массив tasks на результат вызова метода filteredTasks()
-                    onDelete={this.deleteTask}
-                    onUpdate={this.updateTask}
-                  />
-              </section>
-              <Footer
-                count={this.state.tasks.length}
-
-              />
-          </div>
-        );
-    }
+  return (
+    <div className='todoapp'>
+      <header className='header'>
+        <h1>todos 2</h1>
+        <NewTaskForm onAddTask={addTask} />
+      </header>
+      <section className='main'>
+        <TaskList tasks={filteredTasks(tasks, filter)}
+                  onToggleTask={toggleTask}
+                  onDeleteTask={deleteTask}
+                  onEditTask={editTask}
+                  filter={filter}
+        />
+      </section>
+      <Footer
+        totalTasks={tasks.length}
+        completedTasks={tasks.filter((task) => task.completed).length}
+        onClearCompleted={clearCompletedTasks}
+        activeFilter={filter}
+        onFilterChange={setFilter}
+      />
+    </div>
+  )
 }
+
+export default App
