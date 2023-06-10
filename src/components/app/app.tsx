@@ -1,30 +1,38 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import TaskList from '../TaskList'
 import { FilterType } from '../TaskFilter/TaskFilter'
 import NewTaskForm from '../NewTaskForm'
 import Footer from '../Footer'
+import { v4 as uuidv4 } from 'uuid'
 
 
 interface Task {
-  id: number;
+  id: string;
   task: string;
   completed: boolean;
+  created: string
 }
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([])
   const [filter, setFilter] = useState<FilterType>(FilterType.All)
 
+  App.defaultProps = {
+    tasks: [],
+    filter: FilterType.All
+  }
+
   const addTask = (task: string) => {
     const newTask: Task = {
-      id: Date.now(),
+      id: uuidv4(),
       task,
-      completed: false
+      completed: false,
+      created: new Date().toISOString()
     }
     setTasks([...tasks, newTask])
   }
 
-  const toggleTask = (taskId: number) => {
+  const toggleTask = (taskId: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
         task.id === taskId ? { ...task, completed: !task.completed } : task
@@ -32,7 +40,7 @@ const App: React.FC = () => {
     )
   }
 
-  const deleteTask = (taskId: number) => {
+  const deleteTask = (taskId: string) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId))
   }
 
@@ -40,7 +48,7 @@ const App: React.FC = () => {
     setTasks((prevTasks) => prevTasks.filter((task) => !task.completed))
   }
 
-  const editTask = (taskId: number, newTask: string) => {
+  const editTask = (taskId: string, newTask: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
         task.id === taskId ? { ...task, task: newTask, completed: task.completed } : task
@@ -61,11 +69,10 @@ const App: React.FC = () => {
     })
   }
 
-
   return (
     <div className='todoapp'>
       <header className='header'>
-        <h1>todos 2</h1>
+        <h1>todos</h1>
         <NewTaskForm onAddTask={addTask} />
       </header>
       <section className='main'>

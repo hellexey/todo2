@@ -12,6 +12,7 @@ export interface TaskFilterProps {
 }
 
 const TaskFilter: React.FC<TaskFilterProps> = ({  onFilterChange }) => {
+
   return (
     <ul className='filters'>
       <li>

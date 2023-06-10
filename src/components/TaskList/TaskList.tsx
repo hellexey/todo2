@@ -4,15 +4,19 @@ import { FilterType } from '../TaskFilter/TaskFilter'
 
 interface TaskListProps {
   tasks: {
-    id: number;
+    id: string;
     task: string;
     completed: boolean;
+    created: string
   }[];
-  onToggleTask: (taskId: number) => void;
-  onDeleteTask: (taskId: number) => void;
-  onEditTask: (taskId: number, newTask: string) => void;
+  onToggleTask: (taskId: string) => void;
+  onDeleteTask: (taskId: string) => void;
+  onEditTask: (taskId: string, newTask: string) => void;
   filter: FilterType;
+
 }
+
+
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleTask, onDeleteTask, onEditTask, filter }) => {
 
@@ -27,6 +31,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleTask, onDeleteTask, 
           onDelete={() => onDeleteTask(task.id)}
           onEdit={(newTask: string) => onEditTask(task.id, newTask)}
           filter={filter}
+          created={task.created}
         />
       ))}
     </ul>
