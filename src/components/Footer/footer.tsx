@@ -7,20 +7,20 @@ interface FooterProps {
   completedTasks: number;
   onClearCompleted: () => void;
   activeFilter: FilterType;
-  onFilterChange: (filter: FilterType) => void;
+  setCurrentFilter: (filter: FilterType) => void;
 }
 
 const Footer: React.FC<FooterProps> = ({
                                          totalTasks,
                                          completedTasks,
                                          activeFilter,
-                                         onFilterChange,
+                                         setCurrentFilter,
                                          onClearCompleted
                                        }) => {
   return (
     <footer className='footer'>
       <span className='todo-count'>{totalTasks - completedTasks} items left</span>
-      <TaskFilter activeFilter={activeFilter} onFilterChange={onFilterChange} />
+      <TaskFilter activeFilter={activeFilter} onFilterChange={setCurrentFilter} />
       <button className='clear-completed' onClick={onClearCompleted}>
         Clear Completed
       </button>

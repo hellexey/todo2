@@ -1,10 +1,9 @@
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import TaskList from '../TaskList'
 import { FilterType } from '../TaskFilter/TaskFilter'
 import NewTaskForm from '../NewTaskForm'
 import Footer from '../Footer'
 import { v4 as uuidv4 } from 'uuid'
-
 
 interface Task {
   id: string;
@@ -15,11 +14,11 @@ interface Task {
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([])
-  const [filter, setFilter] = useState<FilterType>(FilterType.All)
+  const [currentFilter, setCurrentFilter] = useState<FilterType>(FilterType.All)
 
   App.defaultProps = {
     tasks: [],
-    filter: FilterType.All
+    currentFilter: FilterType.All
   }
 
   const addTask = (task: string) => {
@@ -29,7 +28,7 @@ const App: React.FC = () => {
       completed: false,
       created: new Date().toISOString()
     }
-    setTasks([...tasks, newTask])
+    setTasks(prevTasks => [...prevTasks, newTask])
   }
 
   const toggleTask = (taskId: string) => {
@@ -58,14 +57,10 @@ const App: React.FC = () => {
 
 
   const filteredTasks = (tasks: Task[], filter: FilterType) => {
-    return tasks.filter((task) => {
-      if (filter === FilterType.Completed) {
-        return task.completed
-      } else if (filter === FilterType.Active) {
-        return !task.completed
-      } else {
-        return true
-      }
+    return tasks.filter(task => {
+      return (filter === FilterType.All) ||
+        (filter === FilterType.Completed && !task.completed) ||
+        (filter === FilterType.Active && task.completed)
     })
   }
 
@@ -76,19 +71,19 @@ const App: React.FC = () => {
         <NewTaskForm onAddTask={addTask} />
       </header>
       <section className='main'>
-        <TaskList tasks={filteredTasks(tasks, filter)}
+        <TaskList tasks={filteredTasks(tasks, currentFilter)}
                   onToggleTask={toggleTask}
                   onDeleteTask={deleteTask}
                   onEditTask={editTask}
-                  filter={filter}
+                  filter={currentFilter}
         />
       </section>
       <Footer
         totalTasks={tasks.length}
         completedTasks={tasks.filter((task) => task.completed).length}
         onClearCompleted={clearCompletedTasks}
-        activeFilter={filter}
-        onFilterChange={setFilter}
+        activeFilter={currentFilter}
+        setCurrentFilter={setCurrentFilter}
       />
     </div>
   )

@@ -21,7 +21,9 @@ const NewTaskForm: React.FC<NewTaskFormProps> = ({ onAddTask }) => {
              placeholder='What needs to be done?'
              autoFocus
              value={task}
-             onChange={(e) => setTask(e.target.value)} />
+             onChange={(e) => setTask(e.target.value)}
+             required={true}
+      />
     </form>
   )
 }

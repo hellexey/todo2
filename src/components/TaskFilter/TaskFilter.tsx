@@ -11,21 +11,26 @@ export interface TaskFilterProps {
   onFilterChange: (filter: FilterType) => void;
 }
 
-const TaskFilter: React.FC<TaskFilterProps> = ({  onFilterChange }) => {
+const TaskFilter: React.FC<TaskFilterProps> = ({ activeFilter, onFilterChange }) => {
 
   return (
     <ul className='filters'>
       <li>
-        <button className='selected' onClick={() => onFilterChange(FilterType.All)}>All</button>
+        <button className={activeFilter === FilterType.All ? 'selected' : ''}
+                onClick={() => onFilterChange(FilterType.All)}>All
+        </button>
       </li>
       <li>
-        <button onClick={() => onFilterChange(FilterType.Active)}>Active</button>
+        <button className={activeFilter === FilterType.Active ? 'selected' : ''}
+                onClick={() => onFilterChange(FilterType.Active)}>Active
+        </button>
       </li>
       <li>
-        <button onClick={() => onFilterChange(FilterType.Completed)}>Completed</button>
+        <button className={activeFilter === FilterType.Completed ? 'selected' : ''}
+                onClick={() => onFilterChange(FilterType.Completed)}>Completed
+        </button>
       </li>
     </ul>
-
   )
 }
 

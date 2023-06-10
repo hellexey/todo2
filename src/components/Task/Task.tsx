@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FilterType } from '../TaskFilter/TaskFilter';
+import React, { useState } from 'react'
+import { FilterType } from '../TaskFilter/TaskFilter'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 interface TaskProps {
@@ -13,35 +13,30 @@ interface TaskProps {
 }
 
 const Task: React.FC<TaskProps> = ({ task, completed, onToggle, onDelete, onEdit, created }) => {
-  const [editMode, setEditMode] = useState(false);
-  const [editedTask, setEditedTask] = useState(task);
-
-  Task.defaultProps = {
-    completed: false,
-    created: ''
-  }
+  const [editMode, setEditMode] = useState(false)
+  const [editedTask, setEditedTask] = useState(task)
 
   const handleEdit = () => {
-    setEditMode(true);
-  };
+    setEditMode(true)
+  }
 
   const handleSave = () => {
     if (editedTask.trim() !== '') {
-      onEdit(editedTask);
+      onEdit(editedTask)
     }
-    setEditMode(false);
-    setEditedTask(editedTask);
-  };
+    setEditMode(false)
+    setEditedTask(editedTask)
+  }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEditedTask(event.target.value);
-  };
+    setEditedTask(event.target.value)
+  }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' && editedTask) {
-      handleSave();
+      handleSave()
     }
-  };
+  }
 
   return (
     editMode ? (
@@ -54,6 +49,7 @@ const Task: React.FC<TaskProps> = ({ task, completed, onToggle, onDelete, onEdit
           onKeyDown={handleKeyDown}
           onBlur={handleSave}
           autoFocus
+          required={true}
         />
       </form>
     ) : (
@@ -62,14 +58,18 @@ const Task: React.FC<TaskProps> = ({ task, completed, onToggle, onDelete, onEdit
           <input className='toggle' type='checkbox' defaultChecked={completed} onClick={onToggle} />
           <label>
             <span className='description'>{editedTask}</span>
-            <span className='created'> created {formatDistanceToNow(new Date(created), {includeSeconds: true, addSuffix: true})} </span>
+            <span className='created'> created {
+              formatDistanceToNow(new Date(created), {
+                includeSeconds: true,
+                addSuffix: true
+              })} </span>
           </label>
           <button className='icon icon-edit' onClick={handleEdit}></button>
           <button className='icon icon-destroy' onClick={onDelete}></button>
         </div>
       </li>
     )
-  );
-};
+  )
+}
 
-export default Task;
+export default Task

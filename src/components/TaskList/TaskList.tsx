@@ -13,10 +13,7 @@ interface TaskListProps {
   onDeleteTask: (taskId: string) => void;
   onEditTask: (taskId: string, newTask: string) => void;
   filter: FilterType;
-
 }
-
-
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleTask, onDeleteTask, onEditTask, filter }) => {
 
