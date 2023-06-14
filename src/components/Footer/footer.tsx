@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({
       <span className='todo-count'>{totalTasks - completedTasks} items left</span>
       <TaskFilter activeFilter={activeFilter} onFilterChange={setCurrentFilter} />
       <button className='clear-completed' onClick={onClearCompleted}>
-        Clear Completed
+        Clear completed
       </button>
     </footer>
   )

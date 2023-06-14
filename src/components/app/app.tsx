@@ -50,11 +50,10 @@ const App: React.FC = () => {
   const editTask = (taskId: string, newTask: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === taskId ? { ...task, task: newTask, completed: task.completed } : task
+        task.id === taskId ? { ...task, task: newTask } : task
       )
     )
   }
-
 
   const filteredTasks = (tasks: Task[], filter: FilterType) => {
     return tasks.filter(task => {
