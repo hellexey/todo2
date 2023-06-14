@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="891e42d9-7b14-4aa5-927b-c0bfc1860ea6" name="Changes" comment="правки">
+      <change afterPath="$PROJECT_DIR$/.husky/pre-commit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/todo2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NewTaskForm/NewTaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewTaskForm/NewTaskForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <branch-grouping />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2P66HLeTNrkkl6tTjlstG0UnYDc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lesha/Desktop/code/react/todo2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\lesha\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\lesha\\Desktop\\code\\react\\todo2\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lesha\Desktop\code\react\todo\public" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="891e42d9-7b14-4aa5-927b-c0bfc1860ea6" name="Changes" comment="" />
+      <created>1682765095115</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682765095115</updated>
+      <workItem from="1682765097194" duration="117000" />
+      <workItem from="1682765257267" duration="12000" />
+      <workItem from="1682765366888" duration="643000" />
+      <workItem from="1682770451460" duration="516000" />
+      <workItem from="1683017234728" duration="1191000" />
+      <workItem from="1683041431423" duration="618000" />
+      <workItem from="1683101759554" duration="1642000" />
+      <workItem from="1683193594153" duration="1278000" />
+      <workItem from="1683197712627" duration="1518000" />
+      <workItem from="1683200581261" duration="2512000" />
+      <workItem from="1683209655274" duration="2121000" />
+      <workItem from="1683226403976" duration="740000" />
+      <workItem from="1683372361580" duration="639000" />
+      <workItem from="1683806800192" duration="1174000" />
+      <workItem from="1683985856078" duration="714000" />
+      <workItem from="1684246923039" duration="8283000" />
+      <workItem from="1684304490441" duration="15615000" />
+      <workItem from="1684417024293" duration="505000" />
+      <workItem from="1684417564126" duration="1828000" />
+      <workItem from="1684486601142" duration="2739000" />
+      <workItem from="1684578211048" duration="6668000" />
+      <workItem from="1684746929249" duration="12514000" />
+      <workItem from="1684820853986" duration="599000" />
+      <workItem from="1684852313347" duration="76000" />
+      <workItem from="1684917467108" duration="599000" />
+      <workItem from="1684933378778" duration="731000" />
+      <workItem from="1685008071314" duration="12565000" />
+      <workItem from="1685096883008" duration="11577000" />
+      <workItem from="1685186496155" duration="2915000" />
+      <workItem from="1685200255724" duration="705000" />
+      <workItem from="1685355265958" duration="6724000" />
+      <workItem from="1685374017476" duration="2177000" />
+      <workItem from="1685443332857" duration="10184000" />
+      <workItem from="1685517607433" duration="171000" />
+      <workItem from="1685517786651" duration="107000" />
+      <workItem from="1685517901890" duration="14953000" />
+      <workItem from="1685695913408" duration="1849000" />
+      <workItem from="1686044949776" duration="6163000" />
+      <workItem from="1686051132435" duration="80000" />
+      <workItem from="1686051220490" duration="98000" />
+      <workItem from="1686051359027" duration="80000" />
+      <workItem from="1686051451225" duration="57000" />
+      <workItem from="1686051519404" duration="136000" />
+      <workItem from="1686051999804" duration="294000" />
+      <workItem from="1686052306024" duration="58000" />
+      <workItem from="1686054390305" duration="5836000" />
+      <workItem from="1686134966341" duration="13100000" />
+      <workItem from="1686222656879" duration="7734000" />
+      <workItem from="1686307670569" duration="7370000" />
+      <workItem from="1686388602333" duration="10121000" />
+      <workItem from="1686478425805" duration="1239000" />
+      <workItem from="1686485285648" duration="92000" />
+      <workItem from="1686667498602" duration="723000" />
+      <workItem from="1686670259327" duration="26000" />
+      <workItem from="1686739551449" duration="6242000" />
+      <workItem from="1686746245400" duration="8700000" />
+    </task>
+    <task id="LOCAL-00001" summary="хъ">
+      <created>1685451789503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685451789503</updated>
+    </task>
+    <task id="LOCAL-00002" summary="работает всё, кроме времени создания и слетает галочка при фильтрации">
+      <created>1686235488425</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686235488425</updated>
+    </task>
+    <task id="LOCAL-00003" summary="работает всё">
+      <created>1686395381283</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686395381283</updated>
+    </task>
+    <task id="LOCAL-00004" summary="рефактор, убрал баг с исчезновением тасок при отправке пустой таски">
+      <created>1686399734061</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686399734061</updated>
+    </task>
+    <task id="LOCAL-00005" summary="правки">
+      <created>1686749930507</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686749930507</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TerminalProjectNonSharedOptionsProvider">
+    <option name="startingDirectory" value="C:\Users\lesha\Desktop" />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="хъ" />
+    <MESSAGE value="работает всё, кроме времени создания и слетает галочка при фильтрации" />
+    <MESSAGE value="работает всё" />
+    <MESSAGE value="рефактор, убрал баг с исчезновением тасок при отправке пустой таски" />
+    <MESSAGE value="правки" />
+    <option name="LAST_COMMIT_MESSAGE" value="правки" />
+  </component>
+</project>

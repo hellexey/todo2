@@ -6,20 +6,15 @@ import Footer from '../Footer'
 import { v4 as uuidv4 } from 'uuid'
 
 interface Task {
-  id: string;
-  task: string;
-  completed: boolean;
+  id: string
+  task: string
+  completed: boolean
   created: string
 }
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([])
   const [currentFilter, setCurrentFilter] = useState<FilterType>(FilterType.All)
-
-  App.defaultProps = {
-    tasks: [],
-    currentFilter: FilterType.All
-  }
 
   const addTask = (task: string) => {
     const newTask: Task = {
@@ -28,7 +23,7 @@ const App: React.FC = () => {
       completed: false,
       created: new Date().toISOString()
     }
-    setTasks(prevTasks => [...prevTasks, newTask])
+    setTasks((prevTasks) => [...prevTasks, newTask])
   }
 
   const toggleTask = (taskId: string) => {
@@ -50,31 +45,36 @@ const App: React.FC = () => {
   const editTask = (taskId: string, newTask: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === taskId ? { ...task, task: newTask } : task
+        task.id === taskId
+          ? { ...task, task: newTask, created: new Date().toISOString() }
+          : task
       )
     )
   }
 
   const filteredTasks = (tasks: Task[], filter: FilterType) => {
-    return tasks.filter(task => {
-      return (filter === FilterType.All) ||
+    return tasks.filter((task) => {
+      return (
+        filter === FilterType.All ||
         (filter === FilterType.Completed && !task.completed) ||
         (filter === FilterType.Active && task.completed)
+      )
     })
   }
 
   return (
-    <div className='todoapp'>
-      <header className='header'>
+    <div className="todoapp">
+      <header className="header">
         <h1>todos</h1>
         <NewTaskForm onAddTask={addTask} />
       </header>
-      <section className='main'>
-        <TaskList tasks={filteredTasks(tasks, currentFilter)}
-                  onToggleTask={toggleTask}
-                  onDeleteTask={deleteTask}
-                  onEditTask={editTask}
-                  filter={currentFilter}
+      <section className="main">
+        <TaskList
+          tasks={filteredTasks(tasks, currentFilter)}
+          onToggleTask={toggleTask}
+          onDeleteTask={deleteTask}
+          onEditTask={editTask}
+          filter={currentFilter}
         />
       </section>
       <Footer

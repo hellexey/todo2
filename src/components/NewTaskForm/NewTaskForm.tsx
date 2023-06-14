@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 interface NewTaskFormProps {
-  onAddTask: (task: string) => void;
+  onAddTask: (task: string) => void
 }
 
 const NewTaskForm: React.FC<NewTaskFormProps> = ({ onAddTask }) => {
@@ -17,12 +17,13 @@ const NewTaskForm: React.FC<NewTaskFormProps> = ({ onAddTask }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input className='new-todo'
-             placeholder='What needs to be done?'
-             autoFocus
-             value={task}
-             onChange={(e) => setTask(e.target.value)}
-             required={true}
+      <input
+        className="new-todo"
+        placeholder="What needs to be done?"
+        autoFocus
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        required={true}
       />
     </form>
   )
