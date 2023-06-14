@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+
 import TaskList from '../TaskList'
 import { FilterType } from '../TaskFilter/TaskFilter'
 import NewTaskForm from '../NewTaskForm'
 import Footer from '../Footer'
-import { v4 as uuidv4 } from 'uuid'
 
 interface Task {
   id: string
@@ -21,16 +22,14 @@ const App: React.FC = () => {
       id: uuidv4(),
       task,
       completed: false,
-      created: new Date().toISOString()
+      created: new Date().toISOString(),
     }
     setTasks((prevTasks) => [...prevTasks, newTask])
   }
 
   const toggleTask = (taskId: string) => {
     setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === taskId ? { ...task, completed: !task.completed } : task
-      )
+      prevTasks.map((task) => (task.id === taskId ? { ...task, completed: !task.completed } : task))
     )
   }
 
@@ -45,9 +44,7 @@ const App: React.FC = () => {
   const editTask = (taskId: string, newTask: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === taskId
-          ? { ...task, task: newTask, created: new Date().toISOString() }
-          : task
+        task.id === taskId ? { ...task, task: newTask, created: new Date().toISOString() } : task
       )
     )
   }
