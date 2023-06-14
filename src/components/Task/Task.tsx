@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import { FilterType } from '../TaskFilter/TaskFilter'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
+import { FilterType } from '../TaskFilter/TaskFilter'
+
 interface TaskProps {
-  task: string;
-  completed: boolean;
-  onToggle: () => void;
-  onDelete: () => void;
-  onEdit: (newTask: string) => void;
-  filter: FilterType;
+  task: string
+  completed: boolean
+  onToggle: () => void
+  onDelete: () => void
+  onEdit: (task: string) => void
+  filter: FilterType
   created: string
 }
 
@@ -38,37 +39,38 @@ const Task: React.FC<TaskProps> = ({ task, completed, onToggle, onDelete, onEdit
     }
   }
 
-  return (
-    editMode ? (
-      <form>
-        <input
-          className='edit'
-          type='text'
-          value={editedTask}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          onBlur={handleSave}
-          autoFocus
-          required={true}
-        />
-      </form>
-    ) : (
-      <li className={completed ? 'completed' : ''}>
-        <div className='view'>
-          <input className='toggle' type='checkbox' defaultChecked={completed} onClick={onToggle} />
-          <label>
-            <span className='description'>{editedTask}</span>
-            <span className='created'> created {
-              formatDistanceToNow(new Date(created), {
-                includeSeconds: true,
-                addSuffix: true
-              })} </span>
-          </label>
-          <button className='icon icon-edit' onClick={handleEdit}></button>
-          <button className='icon icon-destroy' onClick={onDelete}></button>
-        </div>
-      </li>
-    )
+  return editMode ? (
+    <form>
+      <input
+        className="edit"
+        type="text"
+        value={editedTask}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        onBlur={handleSave}
+        autoFocus
+        required={true}
+      />
+    </form>
+  ) : (
+    <li className={completed ? 'completed' : ''}>
+      <div className="view">
+        <input className="toggle" type="checkbox" defaultChecked={completed} onClick={onToggle} />
+        <label>
+          <span className="description">{editedTask}</span>
+          <span className="created">
+            {' '}
+            created{' '}
+            {formatDistanceToNow(new Date(created), {
+              includeSeconds: true,
+              addSuffix: true,
+            })}{' '}
+          </span>
+        </label>
+        <button className="icon icon-edit" onClick={handleEdit}></button>
+        <button className="icon icon-destroy" onClick={onDelete}></button>
+      </div>
+    </li>
   )
 }
 

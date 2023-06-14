@@ -1,24 +1,24 @@
 import React from 'react'
+
 import Task from '../Task'
 import { FilterType } from '../TaskFilter/TaskFilter'
 
 interface TaskListProps {
   tasks: {
-    id: string;
-    task: string;
-    completed: boolean;
+    id: string
+    task: string
+    completed: boolean
     created: string
-  }[];
-  onToggleTask: (taskId: string) => void;
-  onDeleteTask: (taskId: string) => void;
-  onEditTask: (taskId: string, newTask: string) => void;
-  filter: FilterType;
+  }[]
+  onToggleTask: (taskId: string) => void
+  onDeleteTask: (taskId: string) => void
+  onEditTask: (taskId: string, newTask: string) => void
+  filter: FilterType
 }
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleTask, onDeleteTask, onEditTask, filter }) => {
-
   return (
-    <ul className='todo-list'>
+    <ul className="todo-list">
       {tasks.map((task) => (
         <Task
           key={task.id}
