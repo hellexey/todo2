@@ -11,18 +11,20 @@ interface Task {
   task: string
   completed: boolean
   created: string
+  timer: { minutes: number; seconds: number }
 }
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([])
   const [currentFilter, setCurrentFilter] = useState<FilterType>(FilterType.All)
 
-  const addTask = (task: string) => {
+  const addTask = (task: string, timer: { minutes: number; seconds: number }) => {
     const newTask: Task = {
       id: uuidv4(),
       task,
       completed: false,
       created: new Date().toISOString(),
+      timer,
     }
     setTasks((prevTasks) => [...prevTasks, newTask])
   }

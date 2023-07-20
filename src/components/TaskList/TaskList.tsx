@@ -9,6 +9,7 @@ interface TaskListProps {
     task: string
     completed: boolean
     created: string
+    timer: { minutes: number; seconds: number }
   }[]
   onToggleTask: (taskId: string) => void
   onDeleteTask: (taskId: string) => void
@@ -29,6 +30,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleTask, onDeleteTask, 
           onEdit={(newTask: string) => onEditTask(task.id, newTask)}
           filter={filter}
           created={task.created}
+          timer={task.timer}
         />
       ))}
     </ul>
