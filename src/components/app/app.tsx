@@ -11,14 +11,14 @@ interface Task {
   task: string
   completed: boolean
   created: string
-  timer: { minutes: number; seconds: number }
+  timer: { hours: number; minutes: number; seconds: number }
 }
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([])
   const [currentFilter, setCurrentFilter] = useState<FilterType>(FilterType.All)
 
-  const addTask = (task: string, timer: { minutes: number; seconds: number }) => {
+  const addTask = (task: string, timer: {hours: number; minutes: number; seconds: number }) => {
     const newTask: Task = {
       id: uuidv4(),
       task,
@@ -55,8 +55,8 @@ const App: React.FC = () => {
     return tasks.filter((task) => {
       return (
         filter === FilterType.All ||
-        (filter === FilterType.Completed && !task.completed) ||
-        (filter === FilterType.Active && task.completed)
+        (filter === FilterType.Completed && task.completed) ||
+        (filter === FilterType.Active && !task.completed)
       )
     })
   }

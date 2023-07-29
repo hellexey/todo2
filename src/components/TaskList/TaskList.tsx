@@ -9,7 +9,7 @@ interface TaskListProps {
     task: string
     completed: boolean
     created: string
-    timer: { minutes: number; seconds: number }
+    timer: { hours: number; minutes: number; seconds: number }
   }[]
   onToggleTask: (taskId: string) => void
   onDeleteTask: (taskId: string) => void
