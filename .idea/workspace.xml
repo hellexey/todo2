@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="891e42d9-7b14-4aa5-927b-c0bfc1860ea6" name="Changes" comment="" />
+    <list default="true" id="891e42d9-7b14-4aa5-927b-c0bfc1860ea6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,16 +16,20 @@
   </component>
   <component name="Git.Settings">
     <branch-grouping />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="timer" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2P66HLeTNrkkl6tTjlstG0UnYDc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -34,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "timer",
+    "git-widget-placeholder": "hooks",
     "ignore.virus.scanning.warn.message": "true",
     "js.linters.configure.manually.selectedeslint": "true",
     "last_opened_file_path": "C:/Users/lesha/Desktop/code/react/todo2",
@@ -45,8 +53,8 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\lesha\\AppData\\Roaming\\npm\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "prettierjs.PrettierConfiguration.Package": "/Users/alexeygrigorogivich/WebstormProjects/todo2/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "/Users/alexeygrigorogivich/WebstormProjects/todo2/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -126,7 +134,11 @@
       <workItem from="1689691435759" duration="1202000" />
       <workItem from="1689775146166" duration="3937000" />
       <workItem from="1689856086912" duration="7078000" />
-      <workItem from="1690651027098" duration="566000" />
+      <workItem from="1690651027098" duration="2853000" />
+      <workItem from="1690655389922" duration="43000" />
+      <workItem from="1691137333673" duration="1816000" />
+      <workItem from="1691222885841" duration="13000" />
+      <workItem from="1691663004508" duration="1630000" />
     </task>
     <task id="LOCAL-00001" summary="хъ">
       <created>1685451789503</created>

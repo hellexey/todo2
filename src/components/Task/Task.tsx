@@ -11,7 +11,8 @@ interface TaskProps {
   onEdit: (task: string) => void
   filter: FilterType
   created: string
-  timer: { hours: number; minutes: number; seconds: number }}
+  timer: { hours: number; minutes: number; seconds: number }
+}
 
 const Task: React.FC<TaskProps> = ({ task, completed, onToggle, onDelete, onEdit, created, timer }) => {
   const [editMode, setEditMode] = useState(false)
@@ -29,17 +30,23 @@ const Task: React.FC<TaskProps> = ({ task, completed, onToggle, onDelete, onEdit
             setTimerRunning(false)
             return prevTime
           }
-          if (prevTime.hours > 0) {
+          if (prevTime.seconds > 0) {
             return {
-              hours: prevTime.hours - 1,
-              minutes: 59,
-              seconds: 59
+              ...prevTime,
+              seconds: prevTime.seconds - 1,
+            }
+          } else if (prevTime.minutes > 0) {
+            return {
+              ...prevTime,
+              minutes: prevTime.minutes - 1,
+              seconds: 59,
             }
           } else {
             return {
-              hours: 0,
+              ...prevTime,
+              hours: prevTime.hours - 1,
               minutes: 59,
-              seconds: prevTime.seconds - 1
+              seconds: 59,
             }
           }
         })
